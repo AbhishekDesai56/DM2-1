@@ -28,6 +28,8 @@ public class CensusAnalyser {
                 type = CensusAnalyserException.ExceptionType.CENSUS_HEADER_PROBLEM;
             }
             throw new CensusAnalyserException(e.getMessage(), type);
+        } catch (CSVBuiderException e) {
+            throw new CensusAnalyserException(e.getMessage(), e.type.name());
         }
     }
 
@@ -51,6 +53,8 @@ public class CensusAnalyser {
                 type = CensusAnalyserException.ExceptionType.CENSUS_HEADER_PROBLEM;
             }
             throw new CensusAnalyserException(e.getMessage(), type);
+        } catch (CSVBuiderException e) {
+            throw new CensusAnalyserException(e.getMessage(), e.type.name());
         }
     }
 
